@@ -17,6 +17,6 @@ Requirements
 Installation
 ------------
 
-Download the zip file and decompress everything under the directory `plugins/GrabScroll`
+Clone into the directory `plugins/GrabScroll`
 
 Note: Plugin folder is case-sensitive.
