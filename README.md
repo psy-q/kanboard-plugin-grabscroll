@@ -17,6 +17,9 @@ Requirements
 Installation
 ------------
 
-Clone into the directory `plugins/GrabScroll`
+You have multiple options:
+
+  * Via zipball/tarball: Download from the [releases page](https://github.com/psy-q/kanboard-plugin-grabscroll/releases) and extract to `plugins/GrabScroll`
+  * Via git: Clone into the directory `plugins/GrabScroll`
 
 Note: Plugin folder is case-sensitive.
