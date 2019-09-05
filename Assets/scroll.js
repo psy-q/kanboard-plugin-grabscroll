@@ -1,36 +1,36 @@
 KB.on('dom.ready', function () {
 	function attachHorizontalScrollListeners() {
-		var boardContainer = $('#board-container');
+		var mainContainer = $('#main');
 		let isDown = false;
 		let startX;
 		let scrollLeftPixels;
 
-		boardContainer.on('mousedown', (e) => {
+		mainContainer.on('mousedown', (e) => {
 			isDown = true;
-			boardContainer.addClass('horizontally-dragged');
-			startX = e.pageX - boardContainer.offset().left;
-			scrollLeftPixels = boardContainer.scrollLeft();
+			$('#board-container').addClass('horizontally-dragged');
+			startX = e.pageX - $('#board-container').offset().left;
+			scrollLeftPixels = $('#board-container').scrollLeft();
 		});
 
-		boardContainer.on('mouseleave', () => {
+		mainContainer.on('mouseleave', () => {
 			isDown = false;
-			boardContainer.removeClass('horizontally-dragged');
+			$('#board-container').removeClass('horizontally-dragged');
 		});
 
-		boardContainer.on('mouseup', () => {
+		mainContainer.on('mouseup', () => {
 			isDown = false;
-			boardContainer.removeClass('horizontally-dragged');
+			$('#board-container').removeClass('horizontally-dragged');
 		});
 
-		boardContainer.on('mousemove', (e) => {
+		mainContainer.on('mousemove', (e) => {
 			if (!isDown) return;
 			// This is a draggable card, we don't want to also drag the background while
 			// dragging a card. 
 			if ($(e.target).parents('div.task-board.draggable-item').length != 0) return;
 			e.preventDefault();
-			const x = e.pageX - boardContainer.offset().left;
+			const x = e.pageX - $('#board-container').offset().left;
 			const walk = (x - startX) * 2; // Scroll speed
-			boardContainer.scrollLeft(scrollLeftPixels - walk);
+			$('#board-container').scrollLeft(scrollLeftPixels - walk);
 		});
 	}
 
